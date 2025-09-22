@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheshanth Reddy - Data Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .bio-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 20px 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .company {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .role {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 3px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skills-list {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .links-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .links-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .link-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .education {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .bio-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bio-card">
+            <div class="header">
+                <h1 class="name">Sheshanth Reddy</h1>
+                <p class="title">Senior Data Engineer</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>St. Louis, MO</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>314-666-5265</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <span>sheshanth.databricks.bi@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary">
+                    Data Engineer with 7+ years of experience designing and implementing cloud-based and on-premises data solutions. Expert in Azure Databricks, Google Cloud Databricks Lakehouse, PySpark, Apache Spark, Kafka, and structured streaming. Strong experience in ETL/ELT pipelines, data modeling, and modern data architecture including Medallion Architecture, Delta Lake, and cloud storage solutions. Proven track record in migrating on-premises warehouses to cloud-native platforms, building scalable batch and streaming workloads, and developing ML-ready pipelines that drive actionable insights.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Atlas Air, NYC</div>
+                            <div class="role">Data Engineer</div>
+                        </div>
+                        <div class="duration">July 2023 - Present</div>
+                    </div>
+                    <p>Leading cloud migration initiatives from on-premises BI solutions to Azure Databricks, developing PySpark jobs for batch and streaming ingestion, implementing security best practices with Azure Key Vault and RBAC, and delivering Power BI dashboards for self-service analytics.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Molina HealthCare, Long Beach, CA</div>
+                            <div class="role">Data Engineer</div>
+                        </div>
+                        <div class="duration">August 2021 - June 2023</div>
+                    </div>
+                    <p>Migrated on-premises databases to Databricks Lakehouse on GCP, designed robust PySpark pipelines, implemented real-time streaming with Kafka and Spark Structured Streaming, and built centralized monitoring frameworks using ELK Stack and GCP Stackdriver.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Atom IT Services, Hyderabad, IN</div>
+                            <div class="role">Big Data Developer</div>
+                        </div>
+                        <div class="duration">June 2019 - December 2020</div>
+                    </div>
+                    <p>Engineered Spark-Scala ETL workflows for enterprise data migration, developed real-time Spark Streaming applications with Cassandra, and implemented Informatica PowerCenter pipelines for data governance and quality management.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Dhruvsoft Services, Hyderabad, IN</div>
+                            <div class="role">ETL Engineer</div>
+                        </div>
+                        <div class="duration">October 2017 - May 2019</div>
+                    </div>
+                    <p>Designed SSIS and Informatica ETL packages, created incremental refresh strategies, built advanced error handling frameworks, and developed SSRS reports for business intelligence and decision-making support.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Cloud & Data Platforms</h4>
+                        <div class="skills-list">Azure Databricks, Google Cloud Databricks, Azure Synapse Analytics, Delta Lake, Cosmos DB, ADLS, GCS</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Big Data & Processing</h4>
+                        <div class="skills-list">Apache Spark, PySpark, Apache Kafka, Google Cloud Pub/Sub, Structured Streaming</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Scripting</h4>
+                        <div class="skills-list">Python, SQL, T-SQL, C#, PySpark, Shell Scripting, HTML, JSON, XML</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>ETL & Orchestration</h4>
+                        <div class="skills-list">SSIS, Informatica, Apache Airflow, GitHub Actions, GraphQL Inspector</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Modeling</h4>
+                        <div class="skills-list">Dimensional Modeling, Data Vault Modeling, Star Schema, Medallion Architecture</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Business Intelligence</h4>
+                        <div class="skills-list">Power BI, SSRS, ELK Stack, Google Cloud Stackdriver</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education">
+                    <h3>Bachelor of Technology in Computer Science</h3>
+                    <p>Jawaharlal Nehru Technological University, Hyderabad | May 2017</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bio-card links-section">
+            <h2 style="margin-bottom: 20px;">Professional Links</h2>
+            <div class="links-container">
+                <a href="mailto:sheshanth.databricks.bi@gmail.com" class="link-btn">
+                    <span>📧</span>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sheshanth-reddy-data-engineer" class="link-btn">
+                    <span>🔗</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/sheshanthdatabricksbi-commits" class="link-btn">
+                    <span>🐙</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior and animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill categories on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            const skillCategories = document.querySelectorAll('.skill-category');
+            skillCategories.forEach((category) => {
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(30px)';
+                category.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(category);
+            });
+
+            // Add hover effects to experience items
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.background = '#e8f4fd';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.background = '#f8f9fa';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
